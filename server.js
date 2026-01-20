@@ -13,7 +13,7 @@ const port = process.env.PORT || 3013;
 app.use(cors());
 app.use(express.json({ limit: '10mb' }));
 
-const TABLE_NAME = 'Kanhom'; // ← ใช้ชื่อตารางตามที่แจ้ง
+const TABLE_NAME = 'Kanhom'; 
 const uploadDir = '/var/www/html/std6630251296/Inventory/uploads/images';
 if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
 app.use('/uploads/images', express.static(uploadDir));
@@ -183,3 +183,4 @@ app.delete('/api/products/:id', async (req, res) => {
 });
 
 app.listen(port, () => console.log(`Server running on http://localhost:${port}`));
+
